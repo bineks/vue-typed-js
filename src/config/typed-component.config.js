@@ -19,7 +19,7 @@ export const props = {
   useHumanizer: {
     type: Boolean,
     required: false,
-    default: true
+    default: true,
   },
   startDelay: {
     type: Number,
