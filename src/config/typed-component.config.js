@@ -16,6 +16,11 @@ export const props = {
     required: false,
     default: 50,
   },
+  useHumanizer: {
+    type: Boolean,
+    required: false,
+    default: true
+  },
   startDelay: {
     type: Number,
     required: false,
@@ -137,6 +142,14 @@ export const getEventHandlers = (context, typedConfig) => {
 
   typedConfig.onDestroy = () => {
     context.$emit('onDestroy')
+  }
+
+  typedConfig.onTypingChar = () => {
+    context.$emit('onTypingChar')
+  }
+
+  typedConfig.onTypingBackspace = () => {
+    context.$emit('onTypingBackspace')
   }
 
   return typedConfig
