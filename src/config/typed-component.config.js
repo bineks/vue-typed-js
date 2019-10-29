@@ -144,12 +144,12 @@ export const getEventHandlers = (context, typedConfig) => {
     context.$emit('onDestroy')
   }
 
-  typedConfig.onTypingChar = () => {
-    context.$emit('onTypingChar')
+  typedConfig.onTypingChar = (e) => {
+    context.$emit('onTypingChar', e)
   }
 
-  typedConfig.onTypingBackspace = () => {
-    context.$emit('onTypingBackspace')
+  typedConfig.onTypingBackspace = (e) => {
+    context.$emit('onTypingBackspace', e)
   }
 
   return typedConfig
