@@ -144,8 +144,8 @@ export const getEventHandlers = (context, typedConfig) => {
     context.$emit('onDestroy')
   }
 
-  typedConfig.onTypingChar = (e) => {
-    context.$emit('onTypingChar', e)
+  typedConfig.onTypingChar = (e, curString, curStrPos, numChars) => {
+    context.$emit('onTypingChar', e, curString, curStrPos, numChars)
   }
 
   typedConfig.onTypingBackspace = (e) => {
